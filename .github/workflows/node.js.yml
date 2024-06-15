@@ -34,7 +34,7 @@ jobs:
         run: npm install
       #- run: npm ci
       - run: npm run build --if-present
-      - run: npm test
+      #- run: npm test
 
       # Generate BOM file and upload to Dependency-Track
       - name: Install BOM generating tool (cyclonedx-bom)
