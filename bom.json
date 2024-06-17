@@ -3,9 +3,9 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.4",
   "version": 1,
-  "serialNumber": "urn:uuid:1162e166-070d-4d9a-b9a8-440d0d664abe",
+  "serialNumber": "urn:uuid:e7a48ca0-8c42-462d-a1a8-309b44caf40c",
   "metadata": {
-    "timestamp": "2024-06-15T21:38:22.889Z",
+    "timestamp": "2024-06-17T20:07:58.230Z",
     "tools": [
       {
         "name": "npm",
@@ -198,7 +198,7 @@
       "licenses": [
         {
           "license": {
-            "id": "MIT"
+            "name": "Apache 2 License"
           }
         }
       ],
