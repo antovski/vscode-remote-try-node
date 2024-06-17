@@ -34,12 +34,13 @@ jobs:
         run: npm install
       - run: npm run build --if-present
 
-      
+
       # Generate BOM file and upload to Dependency-Track
       - name: Install BOM generating tool (cyclonedx-bom)
         run: 'npm install --global @cyclonedx/cyclonedx-npm'
       - name: Generate BOM file
-        run: cyclonedx-npm --output-file bom.json --output-format JSON
+#        run: cyclonedx-npm --output-file bom.json --output-format JSON
+        run: cyclonedx-npm --output-file bom.json --output-format JSON        
       - name: Upload BOM file to Dependency-Track
         run: |
           curl -X "POST" http://antovski.ddns.net:8091/api/v1/bom -H 'Content-Type: multipart/form-data' -H "X-Api-Key: odt_jwqMzLAEplZlA0WHat9lps0UC40p99qb" -F "autoCreate=true" -F "projectName=vscode-remote-try-node" -F "projectVersion=2.0" -F "bom=@./bom.json"
