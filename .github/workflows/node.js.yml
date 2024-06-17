@@ -46,8 +46,9 @@ jobs:
       - name: SBOM zu DependencyTrack senden
         uses: DependencyTrack/gh-upload-sbom@v3
         with:
-          serverHostname: "http://antovski.ddns.net:8091/api/v1/bom"
-          apiKey: "odt_jwqMzLAEplZlA0WHat9lps0UC40p99qb"
+          serverHostname: 'http://antovski.ddns.net:8091/api/v1/bom'
+          port: 8091
+          apiKey: 'odt_jwqMzLAEplZlA0WHat9lps0UC40p99qb'
           projectName: 'Example Project'
           projectVersion: '1.0'
           bomFilename: "bom.json"
