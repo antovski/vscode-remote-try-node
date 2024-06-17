@@ -40,22 +40,10 @@ jobs:
         run: 'npm install --global @cyclonedx/cyclonedx-npm'
       - name: Generate BOM file
         run: cyclonedx-npm --output-file bom.json --output-format JSON        
-#      - name: Upload BOM file to Dependency-Track
-#        run: |
-#          curl -X "POST" http://antovski.ddns.net:8091/api/v1/bom -H 'Content-Type: multipart/form-data' -H "X-Api-Key: odt_jwqMzLAEplZlA0WHat9lps0UC40p99qb" -F "autoCreate=true" -F "projectName=vscode-remote-try-node" -F "parentName=Parent project" -F "parentVersion=parent-v1" -F "projectVersion=4.0" -F "bom=@./bom.json"
-      - name: SBOM zu DependencyTrack senden
-        uses: DependencyTrack/gh-upload-sbom@v3
-        with:
-          serverHostname: 'http://antovski.ddns.net:8091/api/v1/bom'
-          port: 8091
-          protocol: 'http'
-          apiKey: 'odt_jwqMzLAEplZlA0WHat9lps0UC40p99qb'
-          projectName: 'Example Project'
-          projectVersion: '1.0'
-          bomFilename: "bom.json"
-          autoCreate: true
-          parentName: 'Example Parent'
-          parentVersion: 'master.v1'        
+      - name: Upload BOM file to Dependency-Track
+        run: |
+          curl -X "POST" http://antovski.ddns.net:8091/api/v1/bom -H 'Content-Type: multipart/form-data' -H "X-Api-Key: odt_jwqMzLAEplZlA0WHat9lps0UC40p99qb" -F "autoCreate=true" -F "projectName=vscode-remote-try-node" -F "parentName=Parent project" -F "parentVersion=parent-v1" -F "projectVersion=4.0" -F "bom=@./bom.json"
+       
 
 
 
