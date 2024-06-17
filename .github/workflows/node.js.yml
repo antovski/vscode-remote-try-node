@@ -48,6 +48,7 @@ jobs:
         with:
           serverHostname: 'http://antovski.ddns.net:8091/api/v1/bom'
           port: 8091
+          protocol: 'http'
           apiKey: 'odt_jwqMzLAEplZlA0WHat9lps0UC40p99qb'
           projectName: 'Example Project'
           projectVersion: '1.0'
