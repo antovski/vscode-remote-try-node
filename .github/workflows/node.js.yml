@@ -49,7 +49,7 @@ jobs:
         uses: DependencyTrack/gh-upload-sbom@v2.0.0
         with:
           protocol: 'http'
-          serverHostname: http://antovski.ddns.net:8091/api/v1/bom
+          serverHostname: 'http://antovski.ddns.net:8091/api/v1/bom'
           port: 8091
           apiKey: odt_jwqMzLAEplZlA0WHat9lps0UC40p99qb
           projectName: 'Example Project'
