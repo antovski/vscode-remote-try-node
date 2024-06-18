@@ -42,21 +42,21 @@ jobs:
         run: cyclonedx-npm --output-file bom.json --output-format JSON        
 
         
-      - name: Upload BOM file to Dependency-Track
-        run: |
-          curl -X "POST" http://antovski.ddns.net:8091/api/v1/bom -H 'Content-Type: multipart/form-data' -H "X-Api-Key: odt_jwqMzLAEplZlA0WHat9lps0UC40p99qb" -F "autoCreate=true" -F "projectName=vscode-remote-try-node" -F "projectVersion=3.1" -F "bom=@./bom.json"
+#      - name: Upload BOM file to Dependency-Track
+#        run: |
+#          curl -X "POST" http://antovski.ddns.net:8091/api/v1/bom -H 'Content-Type: multipart/form-data' -H "X-Api-Key: odt_jwqMzLAEplZlA0WHat9lps0UC40p99qb" -F "autoCreate=true" -F "projectName=vscode-remote-try-node" -F "projectVersion=3.1" -F "bom=@./bom.json"
 
-##      - name: SBOM zu DependencyTrack senden
-#        uses: DependencyTrack/gh-upload-sbom@v2.0.0
-#        with:
-#          protocol: 'http'
-#          serverHostname: 'http://antovski.ddns.net:8091/api/v1/bom'
-#          port: 8091
-#          apiKey: odt_jwqMzLAEplZlA0WHat9lps0UC40p99qb
-#          projectName: 'Example Project'
-#          projectVersion: 'master'
-#          bomFilename: "./bom.json"
-#          autoCreate: true
+      - name: SBOM zu DependencyTrack senden
+        uses: DependencyTrack/gh-upload-sbom@v3.0.0
+        with:
+          protocol: 'http'
+          serverHostname: 'antovski.ddns.net:8091/api/v1/bom'
+          port: 8091
+          apiKey: odt_jwqMzLAEplZlA0WHat9lps0UC40p99qb
+          projectName: 'Example Project'
+          projectVersion: 'master'
+          bomFilename: "./bom.json"
+          autoCreate: true
 
 
 
