@@ -1,4 +1,4 @@
-# From here should go DT upload procedure
+
 on:
   push:
     branches:
@@ -31,4 +31,36 @@ jobs:
       - name: Install dependencies
         run: npm install
       - run: npm run build --if-present
-# To here should go DT upload procedure
+
+
+      # Generate BOM file and upload to Dependency-Track
+      - name: Install BOM generating tool (cyclonedx-bom)
+        run: 'npm install --global @cyclonedx/cyclonedx-npm'
+      - name: Generate BOM file
+        run: cyclonedx-npm --output-file bom.json --output-format JSON        
+
+        
+#      - name: Upload BOM file to Dependency-Track
+#        run: |
+#          curl -X "POST" http://antovski.ddns.net:8091/api/v1/bom -H 'Content-Type: multipart/form-data' -H "X-Api-Key: odt_jwqMzLAEplZlA0WHat9lps0UC40p99qb" -F "autoCreate=true" -F "projectName=vscode-remote-try-node" -F "projectVersion=3.1" -F "bom=@./bom.json"
+
+      - name: SBOM zu DependencyTrack senden
+        uses: DependencyTrack/gh-upload-sbom@v3.0.0
+        with:
+          protocol: 'http'
+          serverHostname: 'antovski.ddns.net'
+          port: 8091
+          apiKey: odt_jwqMzLAEplZlA0WHat9lps0UC40p99qb
+          projectName: 'Example Project'
+          projectVersion: '1.0'
+          bomFilename: "./bom.json"
+          autoCreate: true
+
+
+
+
+
+
+
+#         curl -X "POST" http://antovski.ddns.net:8091/api/v1/bom -H 'Content-Type:multipart/form-data' -H 'X-Api-Key:odt_jwqMzLAEplZlA0WHat9lps0UC40p99qb' -F 'project=aa9e0336-d990-4015-bde7-27c91ff23827' -F 'bom=@./bom.json'
+
