@@ -44,6 +44,7 @@ jobs:
         run: |
           curl -X "POST" http://antovski.ddns.net:8091/api/v1/bom -H 'Content-Type: multipart/form-data' -H "X-Api-Key: odt_jwqMzLAEplZlA0WHat9lps0UC40p99qb" -F "autoCreate=true" -F "projectName=a-test-curl" -F "projectVersion=1.0" -F "bom=@./bom.json"
 
+          
 #      - name: SBOM zu DependencyTrack senden
 #        uses: DependencyTrack/gh-upload-sbom@v3.0.0
 #        with:
