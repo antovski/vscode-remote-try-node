@@ -39,7 +39,8 @@ jobs:
       - name: Install BOM generating tool (cyclonedx-bom)
         run: 'npm install --global @cyclonedx/cyclonedx-npm'
       - name: Generate BOM file
-        run: cyclonedx-npm --output-file bom.json --output-format JSON        
+        run: cyclonedx-npm --output-file bom.json --output-format JSON    
+            
 
         
 #      - name: Upload BOM file to Dependency-Track
