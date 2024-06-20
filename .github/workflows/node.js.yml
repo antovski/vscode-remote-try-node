@@ -62,6 +62,4 @@ jobs:
 
 
 
-
-
 #         curl -X "POST" http://antovski.ddns.net:8091/api/v1/bom -H 'Content-Type:multipart/form-data' -H 'X-Api-Key:odt_jwqMzLAEplZlA0WHat9lps0UC40p99qb' -F 'project=aa9e0336-d990-4015-bde7-27c91ff23827' -F 'bom=@./bom.json'
