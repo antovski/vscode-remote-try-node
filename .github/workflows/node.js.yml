@@ -51,8 +51,9 @@ jobs:
           serverHostname: 'antovski.ddns.net'
           port: 8091
           apiKey: odt_jwqMzLAEplZlA0WHat9lps0UC40p99qb
+#          project: fb10a15f-66d2-48d7-8c32-8b347f8a52c6
           projectName: 'a-test'
-          projectVersion: 'master'
+          projectVersion: 'xxx'
           bomFilename: "./bom.json"
           autoCreate: true
 
