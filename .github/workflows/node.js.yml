@@ -53,7 +53,7 @@ jobs:
           apiKey: odt_jwqMzLAEplZlA0WHat9lps0UC40p99qb
           project: fb10a15f-66d2-48d7-8c32-8b347f8a52c6
 #          projectName: 'a-test'
-          projectVersion: 'zzz'
+          projectVersion: '123'
           bomFilename: "./bom.json"
           autoCreate: true
 
