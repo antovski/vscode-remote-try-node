@@ -1,6 +1,4 @@
 
-# Run continuous integration
-
 on:
   push:
     branches:
@@ -53,8 +51,8 @@ jobs:
           serverHostname: 'antovski.ddns.net'
           port: 8091
           apiKey: odt_jwqMzLAEplZlA0WHat9lps0UC40p99qb
-          projectName: 'Example Project'
-          projectVersion: '1.0'
+          projectName: 'a-test'
+          projectVersion: 'master'
           bomFilename: "./bom.json"
           autoCreate: true
 
@@ -65,7 +63,3 @@ jobs:
 
 
 #         curl -X "POST" http://antovski.ddns.net:8091/api/v1/bom -H 'Content-Type:multipart/form-data' -H 'X-Api-Key:odt_jwqMzLAEplZlA0WHat9lps0UC40p99qb' -F 'project=aa9e0336-d990-4015-bde7-27c91ff23827' -F 'bom=@./bom.json'
-
-
-
-
