@@ -55,7 +55,7 @@ jobs:
 #          projectName: 'a-test'
           projectVersion: '12345'
           bomFilename: "./bom.json"
-          autoCreate: true
+#          autoCreate: true
 
 
 
